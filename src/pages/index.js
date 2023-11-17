@@ -1,6 +1,9 @@
 import React from "react";
 import { Card, Image, Grid, Button } from "semantic-ui-react";
 
+// TODO: Add comments to code!!!
+// TODO: Style
+
 export default function Home() {
     return (
         <>

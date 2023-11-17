@@ -2,6 +2,8 @@ import React from "react";
 import { useRouter } from "next/router";
 import { Loader, Image } from "semantic-ui-react";
 
+// TODO: Add comments to code!!!
+
 export default function ShowName() {
     const [showInfo, setShowInfo] = React.useState({ loading: true });
     const router = useRouter();

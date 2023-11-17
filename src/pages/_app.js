@@ -4,6 +4,9 @@ import "@/styles/globals.css";
 import { Menu, Input, Button } from "semantic-ui-react";
 import Link from "next/link";
 
+// TODO: Add comments to code!!!
+// TODO: Style
+
 export default function App({ Component, pageProps }) {
     const [showSearch, setShowSearch] = React.useState("");
 
