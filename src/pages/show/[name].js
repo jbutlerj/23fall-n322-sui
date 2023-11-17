@@ -41,6 +41,10 @@ export default function ShowName() {
         showInfo.loading
     );
 
+    // const summary = showInfo.summary;
+    // const summaryRegex = summary.replace(/<\/?[^>]+(>|$)/g, "");
+    // console.log(summaryRegex);
+
     return (
         <>
             <h1>TV Show Name: {router.query.name}</h1>
