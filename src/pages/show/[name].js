@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { Loader, Image } from "semantic-ui-react";
+import { Loader, Image, Card, Label, Icon } from "semantic-ui-react";
+import styles from "@/styles/Show.module.css";
 
 // TODO: Add comments to code!!!
 
@@ -41,13 +42,8 @@ export default function ShowName() {
         showInfo.loading
     );
 
-    // const summary = showInfo.summary;
-    // const summaryRegex = summary.replace(/<\/?[^>]+(>|$)/g, "");
-    // console.log(summaryRegex);
-
     return (
         <>
-            <h1>TV Show Name: {router.query.name}</h1>
             <Loader
                 active={showInfo.loading || showInfo.name == router.query.name}
             />
@@ -56,15 +52,21 @@ export default function ShowName() {
                 showInfo.id ? (
                     // true - then do this
                     <>
-                        <Image
-                            src={showInfo.image.medium}
-                            alt={router.query.name}
-                        ></Image>
-                        <h5>{showInfo.summary}</h5>
-                        <h5>Current Status: {showInfo.status}</h5>
-                        <h5>Premier Date: {showInfo.premiered}</h5>
-                        <h5>Rating: {showInfo.rating.average}</h5>
-                        <h5>Current Network: {showInfo.network.name}</h5>
+                        <Card>
+                            <Image
+                                src={showInfo.image.medium}
+                                alt={showInfo.name}
+                            ></Image>
+                            <Label>
+                                <Icon name="star" /> {showInfo.rating.average}
+                            </Label>
+                            <Card.Content>
+                                <Card.Header>{showInfo.name}</Card.Header>
+                                <Card.Description>
+                                    {showInfo.summary}
+                                </Card.Description>
+                            </Card.Content>
+                        </Card>
                     </>
                 ) : (
                     // false - else do this

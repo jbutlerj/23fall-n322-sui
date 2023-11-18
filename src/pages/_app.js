@@ -16,17 +16,26 @@ export default function App({ Component, pageProps }) {
 
     return (
         <>
-            <Menu color="blue">
+            <Menu className=".menu">
                 <Menu.Item as={Link} href="/">
                     Home
                 </Menu.Item>
-                <Menu.Item>
+                <Menu.Item as={Link} href="/">
+                    Fake
+                </Menu.Item>
+                <Menu.Item as={Link} href="/">
+                    Fake
+                </Menu.Item>
+                <Menu.Item as={Link} href="/">
+                    Fake
+                </Menu.Item>
+                <Menu.Item position="right">
                     <Input
                         name="showSearch"
                         onChange={updateSearch}
                         value={showSearch}
                     />
-                    <Button as={Link} href={`/show/${showSearch}`}>
+                    <Button color="blue" as={Link} href={`/show/${showSearch}`}>
                         Search
                     </Button>
                 </Menu.Item>

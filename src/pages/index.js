@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, Image, Grid, Button } from "semantic-ui-react";
+import { Grid, Image } from "semantic-ui-react";
+import styles from "@/styles/Home.module.css";
 
 // TODO: Add comments to code!!!
 // TODO: Style
@@ -7,40 +8,26 @@ import { Card, Image, Grid, Button } from "semantic-ui-react";
 export default function Home() {
     return (
         <>
-            <Grid>
-                <Grid.Row columns="1">
-                    <Grid.Column>
-                        <h1>Home</h1>
+            <div className={styles.hero}>
+                <Grid>
+                    <Grid.Column className={styles.left} width={10}>
+                        <h1 className={styles.wordmark}>
+                            The TV Show Database
+                        </h1>
                     </Grid.Column>
-                </Grid.Row>
-                <Grid.Row columns="4">
-                    <Grid.Column width="8">
-                        <Card fluid>
-                            <Image
-                                src="/penguin.jpeg"
-                                alt="Penguins"
-                                wrapped
-                                ui={false}
-                            />
-                            <Card.Content>
-                                <Card.Header>Floral Haven</Card.Header>
-                                <Card.Description>
-                                    Matthew is a musician living in Nashville.
-                                </Card.Description>
-                            </Card.Content>
-                        </Card>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <p>
-                            This is placeholder text so we can see what content
-                            will look like.
-                        </p>
-                        <Button color="blue" basic>
-                            Info
-                        </Button>
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
+                </Grid>
+                <Image.Group className={styles.posters}>
+                    <Image
+                        src="iasip.jpg"
+                        alt="It's Always Sunny in Philadelphia"
+                    />
+                    <Image src="b99.jpg" alt="Brooklyn Nine-Nine" />
+                    <Image src="greys.jpg" alt="Grey's Anatomy" />
+                    <Image src="fullhouse.jpg" alt="Full House" />
+                    <Image src="homeimprovement.jpg" alt="Home Improvement" />
+                    <Image src="newgirl.jpg" alt="New Girl" />
+                </Image.Group>
+            </div>
         </>
     );
 }
